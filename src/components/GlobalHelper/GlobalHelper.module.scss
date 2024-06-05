@@ -1,0 +1,77 @@
+@import "@/assets/scss/main";
+
+.helper{
+    position: relative;
+    span{
+        font-size: 12.8px;
+        font-style: normal;
+        font-weight: 500;
+        border-radius: 100%;
+        background: var(--color-secondary);
+        color: var(--color-white);
+        width: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        @include media-up(md) {
+            background: var(--color-grey-light-2);
+            color: var(--color-primary);
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.36px;
+            font-size: 16px;
+            width: 20px;
+            height: 20px;
+        }
+    }
+    &__block{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 12px 20px;
+        width: 310px;
+        border-radius: 8px;
+        border: 1px solid rgba(29, 29, 31, 0.20);
+        background: #FFF;
+        box-shadow: 0px 4px 14px 0px rgba(101, 101, 101, 0.21);
+        z-index: 10;
+        p{
+            font-size: 14px !important;
+            font-weight: 450 !important;
+            line-height: 24px !important;
+        }
+    }
+    &__wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        svg{
+            overflow: visible;
+            cursor: pointer;
+        }
+    }
+    &__description{
+        font-weight: 400 !important;
+    }
+    &__title{
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        line-height: 120% !important;
+        letter-spacing: 0.32px !important;
+    }
+    &_global{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 200;
+        padding: 16px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        border-radius: 16px 16px 0px 0px;
+        background: var(--color-white);
+        box-shadow: 0px -1px 1px 0px rgba(39, 33, 12, 0.06), 0px -1px 1px 0px rgba(39, 33, 12, 0.04), 0px -3px 1px 0px rgba(39, 33, 12, 0.01), 0px -4px 1px 0px rgba(39, 33, 12, 0.00);
+    }
+}

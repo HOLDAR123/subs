@@ -1,0 +1,14 @@
+ingress:
+  host: subsquid.io
+  wwwRedirect: true
+landing:
+  static:
+    image:
+      name: gcr.io/bright-meridian-316511/subsquid-landing-static-prod
+      tag: latest
+    replicas: 1
+  api:
+    basePath: /api
+    image:
+      name: gcr.io/bright-meridian-316511/subsquid-landing-api-prod
+      tag: latest

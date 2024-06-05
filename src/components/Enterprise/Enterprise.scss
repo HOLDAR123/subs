@@ -1,0 +1,106 @@
+@import "../../assets/scss/main";
+
+.enterprise {
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+
+  @include media-up(lg) {
+    width: 100%;
+  }
+
+  &__wrapper {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 24px;
+    max-width: 468px;
+    padding: 0 20px;
+    margin: 0 -20px;
+
+    @include media-up(md) {
+      gap: 32px;
+    }
+
+    @include media-up(lg) {
+      width: calc(100% + 40px);
+      max-width: none;
+      gap: 40px;
+    }
+
+    @include media-up(xl) {
+      gap: 60px;
+    }
+  }
+
+  & > div {
+    overflow: hidden;
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+
+    @include media-up(lg) {
+      gap: 20px;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 24px;
+    grid-template-areas: "tabs" "component" "buttons";
+    overflow: hidden;
+    padding: 20px;
+    margin: -20px;
+
+    @include media-up(md) {
+      gap: 32px;
+    }
+
+    @include media-up(lg) {
+      gap: 32px;
+      grid-template-columns: calc(50% - 16px) calc(50% - 16px);
+      grid-template-rows: auto 1fr;
+      grid-template-areas: "tabs component" "buttons component";
+    }
+  }
+
+  &__tabs {
+    grid-area: tabs;
+  }
+
+  &__component {
+    grid-area: component;
+  }
+
+  &__image {
+    object-fit: cover;
+    width: calc(100% + 12px);
+    max-width: none;
+    border-radius: 8px;
+    margin: 0 -6px;
+    background: #F6F8FB;
+    border: 6px solid #EFF1F4;
+  }
+
+  &__buttons {
+    grid-area: buttons;
+  }
+
+  &__buttons-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    @include media-up(lg) {
+      gap: 24px;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  }
+}

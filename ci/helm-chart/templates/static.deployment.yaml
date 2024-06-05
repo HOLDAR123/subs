@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: static
+  labels:
+    app: static
+spec:
+  replicas: {{ .Values.landing.static.replicas }}
+  template:
+    metadata:
+      name: static
+      labels:
+        app: static
+    spec:
+      containers:
+        - name: static
+          image: {{ .Values.landing.static.image.name }}:{{ .Values.landing.static.image.tag }}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+              name: http
+          resources:
+            requests:
+              cpu: 5m
+              memory: 20Mi
+            limits:
+              memory: 300Mi
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 2
+            periodSeconds: 1
+            failureThreshold: 1
+            successThreshold: 2
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 2
+            periodSeconds: 3
+            failureThreshold: 3
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: static

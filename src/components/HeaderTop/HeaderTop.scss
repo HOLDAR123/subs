@@ -1,0 +1,47 @@
+@import "../../assets/scss/main";
+
+.header-top {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #EC6A3B;
+  padding: 12px 24px;
+  pointer-events: auto;
+  box-sizing: border-box;
+  border-bottom: 2px solid rgb(43, 43, 43);
+  border-radius: 0px 0px 8px 8px;
+
+  @media(max-width: 767px) {
+    align-items: start;
+    justify-content: start;
+  }
+
+
+  img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    margin-right: 12px;
+  }
+
+  p {
+    color: #FFFFFF;
+    @include adaptiv-font(16, 12);
+    font-weight: 700;
+    text-align: left;
+    line-height: 24px;
+    max-width: 80%;
+
+  }
+
+  &__close {
+    position: absolute;
+    cursor: pointer;
+    right: 20px;
+    z-index: 1;
+    @media(max-width: 685px) {
+      top: 20px;
+    }
+  }
+}

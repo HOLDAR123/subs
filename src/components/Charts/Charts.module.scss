@@ -1,0 +1,143 @@
+@import "@/assets/scss/main";
+
+.charts{
+    display: block;
+    width: 100%;
+    position: relative;
+    &::after {
+        z-index: 0;
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        height: 514px;
+        width: 2400px;
+        transform: translate(-50%, -50%);
+        filter: blur(20px);
+        background: radial-gradient(50.00% 50.00% at 50% 50%,rgba(211, 235, 254, 0.8),rgba(211, 235, 254, 0) 100%);
+    }
+    &__wrapper {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+
+        @media(max-width: 785px) {
+            justify-content: start;
+            align-items: start;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        &__leftPart {
+            display: flex;
+            justify-content: start;
+            flex-direction: column;
+            align-items: start;
+            gap: 16px;
+            width: 285px;
+
+            &__text {
+                @include adaptiv-font(14, 12);
+            }
+
+            &__heading {
+                align-self: start;
+                color: rgb(43, 43, 43);
+                font-family: DIN Pro;
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 40px;
+                letter-spacing: 0%;
+                text-align: left;
+            }
+        }
+
+        &__rightPart {
+            width: 455px;
+            height: 125px;
+            display: grid;
+            grid-template-columns: repeat(2 , 1fr);
+
+            @media(max-width: 380px) {
+                width: 355px;
+            }
+
+            &__teams {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                &__heading {
+                    color: rgb(43, 43, 43);
+                    font-family: DIN Pro;
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 24px;
+                    letter-spacing: 0%;
+                    text-align: left;
+                }
+
+                &__amountOrange {
+                    color: rgb(236, 106, 59);
+                    font-family: DIN Pro;
+                    font-size: 32px;
+                    font-weight: 700;
+                    line-height: 40px;
+                    letter-spacing: 0%;
+                    text-align: left;
+                }
+
+                &__avatar {
+                    display: flex;
+                    position: relative;
+
+
+                    img {
+                        margin-left: -10px;
+
+                        @media(max-width: 430px) {
+                            &:nth-child(4) {
+                                display: none;
+                            }
+                            &:nth-child(5) {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    div {
+                        justify-content: center;
+                        align-items: center;
+                        display: flex;
+                        margin-left: -10px;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 1104.08px;
+                        color: rgb(255, 255, 255);
+                        font-family: DIN Pro;
+                        font-size: 10px;
+                        font-weight: 700;
+                        line-height: 13px;
+                        letter-spacing: 0%;
+                    }
+
+                }
+
+
+                &__amountBlue {
+                    color: rgb(45, 171, 224);
+                    font-family: DIN Pro;
+                    font-size: 32px;
+                    font-weight: 700;
+                    line-height: 40px;
+                    letter-spacing: 0%;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

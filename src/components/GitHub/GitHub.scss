@@ -1,0 +1,67 @@
+.github {
+  display: grid;
+  align-items: center;
+  padding: 8px 12px;
+  grid-template-columns: auto auto;
+  gap: 16px;
+  border-radius: 4px;
+  color: inherit;
+  height: 36px;
+
+  transition: color .2s;
+
+  &__section {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    align-content: center;
+    gap: 8px;
+    position: relative;
+
+    span {
+      display: flex;
+      align-items: center;
+      color: var(--color-primary);
+      font-feature-settings: 'clig' off, 'liga' off;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      position: relative;
+      top: -1px;
+    }
+
+    &:not(:last-child) {
+      &:before {
+        content: "";
+        position: absolute;
+        right: -8px;
+        width: 1px;
+        height: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--color-primary);
+      }
+    }
+  }
+
+  &:hover {
+    color: var(--color-secondary);
+
+    span, svg {
+      color: var(--color-secondary);
+    }
+
+    .github__section {
+      &:not(:last-child) {
+        &:before {
+          background: var(--color-secondary);
+        }
+      }
+    }
+  }
+}

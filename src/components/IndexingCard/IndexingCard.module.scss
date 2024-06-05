@@ -1,0 +1,194 @@
+@import "../../assets/scss/main";
+
+.card {
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    background: rgba(45, 171, 224, 0.8);
+    text-align: center;
+    padding: 24px;
+    
+    @include media-down(sm) {
+        padding: 5.56vw;
+        border: 0.28vw solid rgb(255, 255, 255);
+        backdrop-filter: blur(5.56vw);
+    }
+    
+    &__header {
+        width: 100%;
+        border-radius: 200px;
+        background: rgb(255, 255, 255);
+        position: relative;
+        top: -(28px + 24px);
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        color: rgb(45, 171, 224);
+        
+        p {
+            font-family: 'DIN Pro', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 28px;
+            letter-spacing: 0;
+        }
+        
+        @include media-down(sm) {
+            display: none;
+        }
+    }
+    
+    &__subtitle {
+        color: rgb(255, 255, 255);
+        font-family: 'DIN Pro', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0;
+        margin-top: -(28px - 16px + 24px);
+        
+        @include media-down(sm) {
+            font-size: 3.33vw;
+            font-weight: 700;
+            line-height: 5.56vw;
+            text-align: center;
+            margin-top: 3.33vw;
+        }
+        
+        &:not(:last-child) {
+            margin-bottom: 48px;
+            
+            @include media-down(sm) {
+                margin-bottom: 6.67vw;
+            }
+        }
+    }
+    
+    &__body {
+        box-sizing: border-box;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 20px;
+        padding: 24px 28px;
+        min-height: 156px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        
+        @include media-down(sm) {
+            border: 0.28vw solid rgb(255, 255, 255);
+            border-radius: 5.56vw;
+            padding: 6.67vw 7.78vw;
+            min-height: 43.33vw;
+        }
+        
+        &:not(:last-child) {
+            margin-bottom: 40px;
+            
+            @include media-down(sm) {
+                margin-bottom: 4.44vw;
+            }
+        }
+        
+        &_title {
+            color: rgb(255, 255, 255);
+            font-family: 'DIN Pro', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 28px;
+            letter-spacing: 0;
+            
+            @include media-down(sm) {
+                font-size: 3.89vw;
+                font-weight: 700;
+                line-height: 5vw;
+                text-align: left;
+            }
+            
+            &:not(:last-child) {
+                margin-bottom: 16px;
+                
+                @include media-down(sm) {
+                    margin-bottom: 3.89vw;
+                }
+            }
+        }
+    }
+    
+    &__arrow {
+        display: flex;
+        width: 120px;
+        margin: -20px auto 20px auto;
+        
+        @include media-down(sm) {
+            width: 22.22vw;
+            margin: -2.22vw auto 2.22vw auto;
+        }
+    }
+    
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        width: 100%;
+        
+        @include media-down(sm) {
+            gap: 2.22vw;
+            margin: auto;
+        }
+        
+        &_column {
+            flex-wrap: nowrap;
+            flex-direction: column;
+            align-items: center;
+            
+            & > div {
+                min-width: 180px;
+            }
+        }
+        
+        &_left {
+            justify-content: flex-start;
+            
+            @include media-down(sm) {
+                justify-content: flex-start;
+            }
+        }
+    }
+    
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-width: 100px;
+        
+        @include media-down(sm) {
+            gap: 2.22vw;
+            min-width: 27.78vw;
+        }
+        
+        img {
+            @include media-down(sm) {
+                width: 16px;
+                height: 16px;
+                object-fit: contain;
+            }
+        }
+        
+        p {
+            color: #fff;
+            font-family: "DIN Pro", sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            
+            @include media-down(sm) {
+                font-size: 3.33vw;
+                font-weight: 500;
+                line-height: 5.56vw;
+            }
+        }
+    }
+}

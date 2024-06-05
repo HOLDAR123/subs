@@ -1,0 +1,90 @@
+@import "../../assets/scss/main";
+
+.tabs {
+  border-radius: 12px;
+  background: #F0DECA;
+  box-shadow: -10px -15px 35px 0px #FFEAD3 inset;
+  overflow: hidden;
+
+  &__header {
+    height: 50px;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: 10px;
+    padding: 6px;
+    margin-bottom: -1px;
+  }
+
+  &__button {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 160%;
+    gap: 8px;
+    align-items: center;
+    position: relative;
+    height: 43px;
+    padding: 6px 12px;
+    border-radius: 6px 6px 0 0;
+    transition: background-color .2s;
+
+    img {
+      position: relative;
+      z-index: 1;
+    }
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
+
+    &--active {
+      background-color: #FDF1E4;
+    }
+  }
+
+  &__items {
+    text-align: left;
+    border-radius: 0 0 12px 12px;
+    background: #FDF1E4;
+    padding: 25px 22px 30px 14px;
+    box-shadow: -10px -15px 35px 0px #FFEAD3 inset;
+    min-height: 270px;
+
+    @include media-up(md) {
+      min-height: 224px;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+
+      li {
+        color: var(--color-primary);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 140%;
+        letter-spacing: 0.28px;
+
+        &:not(:last-child) {
+          margin-bottom: 1em;
+        }
+      }
+    }
+  }
+
+  &__item-wrap {
+    padding: 0 20px;
+    margin-top: 24px;
+
+    a {
+      color: var(--Link, #3880EC);
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.28px;
+    }
+  }
+}

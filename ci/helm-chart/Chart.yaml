@@ -1,0 +1,5 @@
+apiVersion: v2
+appVersion: 0.0.1
+name: landing
+type: application
+version: 0.1.0

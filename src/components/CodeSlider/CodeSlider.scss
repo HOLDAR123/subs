@@ -1,0 +1,228 @@
+@import "../../assets/scss/main";
+
+.code-slider {
+  max-width: 640px;
+  width: 100%;
+  position: relative;
+  text-align: left;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--grey-light, #F3F3F6);
+
+  &__pre {
+    transition: height .3s linear, background-color .2s linear;
+    height: auto;
+    overflow: auto !important;
+    border-radius: 4px;
+    background: var(--color-white);
+    padding: 16px;
+    text-wrap: nowrap;
+
+    pre {
+      text-wrap: inherit !important;
+      padding: 0 !important;
+      background: none !important;
+      height: 100%;
+      overflow: visible !important;
+
+      code {
+        text-wrap: inherit !important;
+        font-size: 14px;
+        height: 100%;
+        overflow: visible !important;
+
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &--over {
+      min-height: 152px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 20px;
+
+    @include media-up(xl) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--grey-light, #F3F3F6);
+  }
+
+  &__arrow {
+    transition: color .2s;
+    cursor: pointer;
+    color: var(--color-primary);
+
+    &:hover {
+      color: var(--color-secondary);
+    }
+
+    &:focus {
+      color: var(--color-primary);
+    }
+  }
+
+  &__title {
+    padding-right: 70px;
+    color: var(--color-primary);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 140%;
+    margin-bottom: 16px;
+  }
+
+  &__caption {
+    height: 0;
+    overflow: hidden;
+    transition: height .3s;
+
+    p {
+      font-size: 16px;
+      line-height: 160%;
+      font-weight: 300;
+      margin-top: 16px;
+    }
+
+    &--expand {
+      height: auto;
+    }
+  }
+
+  a {
+    color: var(--ifm-link-color, #3880EC) !important;
+    font-weight: 500;
+
+    &:hover {
+      color: var(--ifm-link-hover-color, #424242) !important;
+    }
+  }
+
+  &__line {
+    width: 1px;
+    height: 16px;
+    background: var(--ifm-navbar-link-color, #1C1E21);
+  }
+
+  &__link {
+    color: var(--color-link);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    transition: .2s;
+
+    &:hover {
+      color: var(--color-secondary);
+    }
+
+    &:active {
+      color: var(--color-primary);
+    }
+  }
+
+  &__collapse {
+    color: var(--color-primary);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%; /* 16px */
+    letter-spacing: 0.32px;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: .2s;
+
+    &:hover {
+      color: var(--color-secondary);
+    }
+
+    svg {
+      transition: transform .3s;
+    }
+
+    &--expand {
+      svg {
+        transform: scale(-1);
+      }
+    }
+  }
+
+  &__stage {
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+
+    @include media-up(xl) {
+      & > a, & > span {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+
+    &--visible {
+      & > a, & > span {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__stages {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    gap: 16px;
+    margin-top: 20px;
+
+    @include media-up(xl) {
+      margin-top: 0;
+    }
+
+    .swiper-pagination-bullet {
+      width: 8px;
+      height: 8px;
+      display: table;
+      background-color: #ADADAD;
+      border-radius: 50%;
+      transition: background .2s;
+      cursor: pointer;
+
+      &:hover {
+        background: var(--color-secondary);
+      }
+
+      &.swiper-pagination-bullet-active {
+        background-color: #2B2B2B;
+      }
+    }
+  }
+}

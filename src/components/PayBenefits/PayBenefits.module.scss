@@ -1,0 +1,276 @@
+@import "@/assets/scss/main";
+
+
+
+.pay-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  // margin-top: 60px;
+  @include media-up(md) {
+    gap: 40px;
+    // margin-top: 120px;
+  }
+  @include media-up(xxl) {
+    gap: 60px;
+  }
+
+  &__subtitle {
+    margin-top: 12px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    font-family: "DIN Pro";
+    letter-spacing: 0.32px;
+    color: var(--color-secondary);
+    text-align: center;
+    @include media-up(md) {
+      margin-top: 20px;
+      line-height: 160%;
+      letter-spacing: 0.4px;
+    }
+    @include media-up(xxl) {
+      letter-spacing: 0.48px;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media(max-width: 727px) {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+
+  &__item {
+    border-radius: 20px;
+    box-shadow: 0px 0px 7.95429px 0px rgba(0, 0, 0, 0.04), 0px 0px 3px 0px rgba(0, 0, 0, 0.24);
+    padding: 24px;
+    background: var(--color-white);
+    overflow: hidden;
+    flex-direction: column;
+    width: 100%;
+    transition: 0.3s all;
+    display: grid;
+
+    &:nth-child(2) {
+      box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+      background: linear-gradient(180deg, rgba(225, 241, 254, 1) 0%, rgba(255, 233, 208, 1) 100%);
+      position: relative;
+      z-index: 99;
+      height: 568px;
+      width: 485px;
+
+      @media(max-width: 727px) {
+        flex-direction: column;
+        width: 400px;
+        button {
+          margin-top: 100px ;
+        }
+
+      }
+
+      @media(max-width: 430px) {
+        width: 100%;
+      }
+
+      //@media(max-width: )
+
+      button {
+        box-sizing: border-box;
+        border: 1px solid rgb(43, 43, 43);
+        border-radius: 200px;
+        height: 48px;
+        color: rgb(255, 255, 255);
+        font-family: DIN Pro;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0%;
+        text-align: left;
+        padding: 12px 24px 12px 24px;
+        box-shadow: 2px 2px 0px 0px rgb(43, 43, 43);
+        background: rgb(236, 106, 59);
+      }
+    }
+    &:nth-child(1) {
+      width: 400px;
+      height: 504px;
+      margin-right: -20px;
+
+
+
+      @media(max-width: 727px) {
+
+       margin: 0;
+        height: 440px;
+      }
+      @media(max-width: 430px) {
+        width: 100%;
+      }
+    }
+
+    &:nth-child(3) {
+      width: 400px;
+      height: 504px;
+      margin-left: -20px;
+      @media(max-width: 727px) {
+        button {
+          margin-top: 100px ;
+        }
+        margin: 0;
+        height: 400px;
+      }
+      @media(max-width: 430px) {
+        width: 100%;
+      }
+    }
+
+    &_orange {
+      display: block;
+      background: url('../../../public/blub-10.png') center center/cover no-repeat;
+      height: 1772.314px;
+      width: 586.141px;
+      position: absolute;
+      bottom: 150px;
+      left: 100%;
+      transform: translateX(-50%);
+      mix-blend-mode: overlay;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    &_blue {
+      display: block;
+      background: url('../../../public/blub-9.png') center center/cover no-repeat;
+      height: 1694px;
+      width: 617px;
+      fill: #68BEFC;
+      position: absolute;
+      top: -177px;
+      left: 50%;
+      transform: translateX(-50%);
+      mix-blend-mode: multiply;
+      z-index: 1;
+      pointer-events: none;
+      // @include media-up(sm) {
+      //     left: 40%;
+      //     top: -177px;
+      // }
+    }
+
+    &:hover {
+      transition: 0.3s all;
+      box-shadow: 0px 2.5182px 2.21381px 0px rgba(0, 0, 0, 0.02), 0px 6.05159px 5.32008px 0px rgba(0, 0, 0, 0.02), 0px 11.39461px 10.01724px 0px rgba(0, 0, 0, 0.03), 0px 20.32604px 17.86905px 0px rgba(0, 0, 0, 0.04), 0px 38.01762px 33.42209px 0px rgba(0, 0, 0, 0.04), 0px 91px 80px 0px rgba(0, 0, 0, 0.06), 0px 0px 8px 0px rgba(0, 0, 0, 0.04), 0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+    }
+
+    @include media-up(lg) {
+      padding: 48px 40px;
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    h3 {
+      color: rgb(43, 43, 43);
+      font-family: DIN Pro;
+      @include adaptiv-font(32, 20);
+      font-weight: 700;
+      letter-spacing: 0%;
+    }
+
+    &__description {
+      color: rgb(43, 43, 43);
+      font-family: DIN Pro;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0%;
+      text-align: left;
+    }
+
+    &__subtitle {
+      color: rgb(236, 106, 59);
+      font-family: DIN Pro;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 20.03px;
+      letter-spacing: 0.05em;
+      text-align: left;
+
+    }
+
+    &__list {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 44px;
+
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        p {
+          color: rgb(43, 43, 43);
+          font-family: DIN Pro;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 20px;
+          letter-spacing: 0%;
+        }
+
+        svg {
+          overflow: visible;
+          @include media-up(xl) {
+            width: 26px;
+            height: 26px;
+          }
+        }
+      }
+    }
+
+    &__button {
+      box-sizing: border-box;
+      z-index: 2;
+      color: rgb(43, 43, 43);
+      font-family: DIN Pro;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: 0%;
+      box-sizing: border-box;
+      border: 1px solid rgb(43, 43, 43);
+      border-radius: 200px;
+      box-shadow: 2px 2px 0px 0px rgb(43, 43, 43);
+      background: rgb(255, 255, 255);
+      background: none;
+      width: 100%;
+      height: 48px;
+      transition: 0.2s all;
+
+
+      @include media-up(lg) {
+        margin-top: auto;
+      }
+
+      a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

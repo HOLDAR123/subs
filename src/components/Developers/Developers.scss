@@ -1,0 +1,270 @@
+@import "../../assets/scss/main";
+
+.developers {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 24px;
+    padding-top: 116px;
+    padding-bottom: 150px;
+    background: #5DCBF5;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    
+    @include media-down(md) {
+        padding-top: 22.22vw;
+        margin-top: -1px;
+        padding-bottom: 33.33vw;
+        gap: 6.67vw;
+    }
+    
+    @media (max-width: 600px) {
+        overflow: hidden;
+        max-width: 100vw;
+    }
+    
+    
+    &:before {
+        content: "";
+        background: url(/developers_water.svg) top center / cover no-repeat;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        
+        @include media-down(md) {
+            background: url(/developers_water-mobile.svg) top center / cover no-repeat;
+        }
+    }
+    
+    &:after {
+        content: "";
+        background: url(/developers_bubbles.svg) top center / contain no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        
+        @include media-down(md) {
+            content: none;
+        }
+    }
+    
+    &__wrapper {
+        position: relative;
+        z-index: 3;
+        
+        .swiper {
+            overflow: visible;
+        }
+    }
+    
+    &__header {
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 24px;
+        
+        @include media-down(xl) {
+            margin-bottom: 48px;
+        }
+        
+        @include media-down(lg) {
+            margin-bottom: 48px;
+        }
+        
+        @include media-down(md) {
+            margin-bottom: 13.33vw;
+        }
+        
+        @include media-down(sm) {
+            margin-bottom: 6.67vw;
+        }
+        
+        @include media-up(lg) {
+            gap: 20px;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 64px;
+            font-weight: 900;
+            -webkit-text-stroke: 1px rgb(43, 43, 43);
+            color: rgb(255, 255, 255);
+            text-shadow: rgb(43, 43, 43) 4px 4px;
+            line-height: 72px;
+            
+            @include media-down(md) {
+                font-size: 8.89vw;
+                font-weight: 900;
+                line-height: 8.89vw;
+                text-align: center;
+                -webkit-text-stroke: 0.28vw rgb(43, 43, 43);
+                text-shadow: rgb(43, 43, 43) 0.83vw 0.83vw;
+                padding: 0 20px;
+            }
+        }
+    }
+    
+    .swiper {
+        width: 100%;
+    }
+    
+    &__swiper {
+        padding: 4px;
+        padding-bottom: 140px;
+        
+        @include media-down(md) {
+            padding-bottom: 0;
+        }
+        
+        .swiper-wrapper {
+            transition-timing-function: linear;
+            height: 100%;
+        }
+        
+        .swiper-slide {
+            height: 100%;
+            
+            & > div {
+                height: 100%;
+            }
+        }
+    }
+}
+
+.DeveloperCard {
+    $root: &;
+    width: 340px;
+    height: 254px;
+    margin-right: 24px;
+    
+    @include media-down(sm) {
+        width: 66.67vw;
+        height: 42.22vw;
+        margin-right: 4.44vw;
+    }
+    
+    &__wrapper {
+        border-radius: 20px;
+        background: #65AFE0;
+        backdrop-filter: blur(40px);
+        display: grid;
+        padding: 40px;
+        gap: 32px;
+        height: 100%;
+        min-height: 228px;
+        position: relative;
+        border: 2px solid #FFFFFF66;
+        
+        @include media-down(md) {
+            padding: 4.44vw;
+            border: 0.28vw solid #FFFFFF66;
+            border-radius: 4.44vw;
+            min-height: auto;
+            gap: 8.89vw;
+            backdrop-filter: blur(11.11vw);
+        }
+    }
+    
+    &__link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9;
+    }
+}
+
+.DeveloperCardHeader {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-content: space-between;
+    align-items: flex-end;
+    
+    &__avatar {
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    &__social {
+        img {
+            height: 24px;
+            object-fit: contain;
+            
+            @include media-down(md) {
+                height: 4.44vw;
+            }
+        }
+    }
+    
+    &__info {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 32px 1fr;
+        gap: 16px;
+        
+        @include media-down(md) {
+            grid-template-columns: 6.67vw 1fr;
+            gap: 2.22vw;
+        }
+    }
+    
+    &__data {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    
+    &__name {
+        color: #fff;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 180%;
+        letter-spacing: 0.32px;
+        
+        @include media-down(md) {
+            font-size: 3.33vw;
+            line-height: 4.44vw;
+        }
+    }
+    
+    &__slug {
+        color: #fff;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 140%;
+        letter-spacing: 0.36px;
+        
+        @include media-down(md) {
+            font-size: 2.78vw;
+            line-height: 3.89vw;
+        }
+    }
+}
+
+.DeveloperCardMain {
+    p {
+        color: #fff;
+        font-size: 20px;
+        overflow: hidden;
+        width: 100%;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        
+        @include media-down(md) {
+            font-size: 3.89vw;
+            font-weight: 500;
+            line-height: 5vw;
+        }
+    }
+}

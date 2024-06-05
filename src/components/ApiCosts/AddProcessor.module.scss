@@ -1,0 +1,55 @@
+@import "@/assets/scss/main";
+
+.add{
+    border-radius: 20px;
+    position: relative;
+    overflow: visible;
+    background: rgba(255, 255, 255, 0.2);
+    &_disable{
+        .add__wrapper{
+            opacity: 0.4;
+            cursor: default;
+        }
+    }
+    &__wrapper{
+        padding: 12px 0;
+        border-radius: 20px;
+        background: #cbeefc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        cursor: pointer;
+        height: 100%;
+    }
+    p{
+        color: rgba(236, 106, 59, 1);
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.32px;
+    }
+    svg{
+        overflow: visible;
+    }
+    &__hint{
+        display: block;
+        box-sizing: border-box;
+        border-radius: 8px;
+        border: 1px solid rgba(29, 29, 31, 0.20);
+        background: #F8F8F8;
+        box-shadow: 0px 4px 14px 0px rgba(101, 101, 101, 0.21);
+        padding: 12px 20px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 450;
+        line-height: 24px; /* 171.429% */
+        color: rgba(29, 29, 31, 0.80) !important;
+        opacity: 1;
+        // width: fit-content;
+        position: fixed;
+    }
+    @include media-up(md) {
+        min-height: 150px;
+        background: var(--color-white);
+    }
+}
